@@ -1,0 +1,44 @@
+version: "3.7"
+
+services:
+  express:
+    container_name: express-app
+    build:
+      context: ./
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+    # depends_on:
+    #   - mysql
+    # networks:
+    #   - frontend
+    #   - backend
+
+  # mysql:
+  #   image: mysql
+  #   container_name: mysql-app
+  #   # networks:
+  #   #   - backend
+  #   environment:
+  #     MYSQL_NAME: shop_db
+  #   env_file:
+  #     - .env
+  #   ports:
+  #     - 3306:3306
+
+  # phpmyadmin:
+  #   image: phpmyadmin
+  #   depends_on:
+  #     - mysql
+  #   networks:
+  #     - backend
+  #   ports:
+  #     - 3001:80
+  #   environment:
+  #     - PMA_HOST=mysql-app
+  #     - PMA_PORT=3306
+  #   container_name: phpmyadmin-app
+# networks:
+#   frontend:
+#   backend:

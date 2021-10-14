@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  phpmyadmin:
+    image: phpmyadmin
+    # depends_on:
+    #   - mysql
+    ports:
+      - 3001:80
+    environment:
+      - PMA_HOST=mysql-app
+      - PMA_PORT=3306
+    container_name: phpmyadmin-app

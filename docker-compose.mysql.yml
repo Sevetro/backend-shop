@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  mysql:
+    container_name: mysql-app
+    image: mysql
+    env_file:
+      - .env
+    ports:
+      - 3306:3306
